@@ -1,5 +1,5 @@
 
-:root{--bg:#f7f6f2;--card:#fff;--ink:#1c1c1e;--muted:#6b6b70;--line:#e6e3dc;--acc:#0f766e;--acc-soft:#e3f2ef}
+:root{--bg:#ffffff;--card:#fff;--ink:#1c1c1e;--muted:#6b6b70;--line:#e6e3dc;--acc:#0f766e;--acc-soft:#e3f2ef}
 @media (prefers-color-scheme:dark){:root{--bg:#121214;--card:#1c1c1f;--ink:#ececec;--muted:#9b9ba1;--line:#2c2c30;--acc:#2dd4bf;--acc-soft:#133a36}}
 *{box-sizing:border-box}
 html,body{overflow-x:hidden}
@@ -20,11 +20,15 @@ hr{border:0;border-top:1px solid var(--line);margin:32px 0}
 .btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600;margin:8px 8px 0 0}
 @media (prefers-color-scheme:dark){.btn{color:#062421}}
 .lead{font-size:19px;background:var(--card);border:1px solid var(--line);padding:16px 20px;border-radius:14px}
-.cards{display:grid;gap:12px}
-.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:16px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .card:hover{border-color:var(--acc)}
-.card b{display:block;font-size:17px}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:0;margin:0}
+.card .t{padding:12px 16px 14px}
+.card b{display:block;font-size:16px;line-height:1.35}
 .card span{color:var(--muted);font-size:14px}
+.btn-big{display:block;text-align:center;background:var(--acc);color:#fff;padding:16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:18px;margin:48px 0 0}
+@media (prefers-color-scheme:dark){.btn-big{color:#062421}}
 .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px}
 .num{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
 .num h3{margin:0 0 6px;font-size:16px}
